@@ -7,12 +7,14 @@
 
 import SwiftUI
 
+//
 struct pic {
     var img: String
     var name: String
     var description: String
 }
 
+// 圖文
 struct ContentView: View {
     
     let roles: [pic] = [
@@ -24,6 +26,7 @@ struct ContentView: View {
     
     @State private var pickindex = 0
     
+    //背景圖
     var body: some View {
         ZStack{
             
@@ -31,6 +34,7 @@ struct ContentView: View {
                 .resizable()
                 .scaledToFill()
             
+            //隨機
             HStack{
                 Button(action:{
                     let randNum = 0 ..< self.roles.count
@@ -74,6 +78,7 @@ struct ContentView: View {
         .edgesIgnoringSafeArea(.all)
     }
 }
+//預覽
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
